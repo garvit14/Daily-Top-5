@@ -2,7 +2,6 @@
 # List of today's top 5 songs is fetched from gaana.com
 import bs4 as bs
 import urllib
-import requests
 import os.path
 import sys
 from google import search
@@ -31,7 +30,6 @@ def download(source_url):
 		f=open(loc+name,'wb')
 		u=urllib.urlopen(song_url)
 		size = int(u.info().getheader("Content-Length"))
-		# print(u.info())
 		print('size : '+str((float(size)/1024)/1024)+' MB')
 		block_size=81920
 		file_size=0
@@ -43,7 +41,6 @@ def download(source_url):
 			file_size+=len(buffer)
 			f.write(buffer)
 			p=float(file_size)/size;
-			# print(p)
 			pbar.update(int(p*100))
 		pbar.finish()
 		break;
