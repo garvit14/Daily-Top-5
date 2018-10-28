@@ -7,7 +7,7 @@ import sys
 from google import search
 import progressbar
 
-print('Downloading your songs!!')
+print('Downloading today's top 5 songs!!')
 
 #takes path as command line argument
 #If no argument is given, saves to directory in which script is run
